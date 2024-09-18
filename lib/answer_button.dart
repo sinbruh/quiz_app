@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/questions.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton(this.answerText, this.onTap, {super.key});
 
   final String answerText;
   final void Function() onTap;
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,6 @@ class AnswerButton extends StatelessWidget {
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10))),
-        child: Text(answerText));
+        child: Text(answerText, textAlign: TextAlign.center,));
   }
 }
