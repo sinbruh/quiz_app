@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/data/questions.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton(this.answerText, this.onTap, {super.key});
