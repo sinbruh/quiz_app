@@ -1,30 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/score_methods.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen(this.chosenAnswers, this.restartQuiz, {super.key});
+  const ResultsScreen(this.chosenAnswers, this.restartQuiz, this.showScoreboard, {super.key});
 
   final List<String> chosenAnswers;
   final void Function() restartQuiz;
-
-  List<Map<String, Object>> get summaryData {
-    final List<Map<String, Object>> summary = [];
-
-    for (var i = 0; i < chosenAnswers.length; i++) {
-      summary.add({
-        'question_index': i,
-        'question': questions[i].text,
-        'correct_answer': questions[i].answers[0],
-        'user_answer': chosenAnswers[i]
-      });
-    }
-
-    return summary;
-  }
+  final void Function() showScoreboard;
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, Object>> summaryData = ScoreMethods(chosenAnswers).summaryData;
+
+
     final numTotalQuestions = questions.length;
     final numCorrectQuestions = summaryData
         .where((data) => data['correct_answer'] == data['user_answer'])
@@ -52,9 +42,23 @@ class ResultsScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              TextButton.icon(icon: Icon(Icons.restart_alt),
+              TextButton.icon(
+                  icon: const Icon(Icons.restart_alt),
                   style: TextButton.styleFrom(foregroundColor: Colors.white),
-                  onPressed: restartQuiz, label: const Text("Restart Quiz!", style: TextStyle(fontWeight: FontWeight.bold),))
+                  onPressed: restartQuiz,
+                  label: const Text(
+                    "Restart Quiz",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
+              TextButton.icon(
+                  icon: const Icon(Icons.stacked_bar_chart),
+                  style: TextButton.styleFrom(foregroundColor: Colors.white),
+                  onPressed: showScoreboard,
+                  label: const Text(
+                    "Scoreboard",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ))
+
             ],
           ),
         ));

@@ -38,7 +38,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
 
               children: [
-                Text("Time: currentTime"),
                 Text(
                   currentQuestion.text,
                   style: GoogleFonts.lato(color: Colors.white,
