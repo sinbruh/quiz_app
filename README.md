@@ -1,16 +1,20 @@
-# quiz_app
+# Quiz App Enhancement Project
 
-A new Flutter project.
+Assignment 1 in course
+[IDATA2503 Mobile applikasjoner](https://www.ntnu.edu/studies/courses/IDATA2503#tab=omEmnet).
+The project consists of a quiz made in the[Udemy](https://www.udemy.com/) course
+[Flutter & Dart - The Complete Guide](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/?kw=flutter&src=sac)
+with an extra features. At the end of the quiz, you are shown a results screen, where you can either
+restart the quiz or look at a scoreboard. The results in the scoreboard are not stored locally, so
+they will disappear when the app closes.
 
-## Getting Started
+### Extra feature
 
-This project is a starting point for a Flutter application.
+- Scoreboard screen
 
-A few resources to get you started if this is your first Flutter project:
+### How to run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Open the project folder in your preferred IDE
+2. Open an Android emulator or connect to an Android device etc.
+3. Run the command ```flutter run```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
