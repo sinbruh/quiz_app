@@ -61,7 +61,7 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    Widget screenWidget = StartScreen(switchScreen, showScoreboard);
 
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionsScreen(chooseAnswer);

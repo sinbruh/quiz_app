@@ -23,8 +23,13 @@ class _ScoreboardState extends State<Scoreboard> {
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("$index. $score out of 6", style: const TextStyle(color: Colors.white),),
-                const SizedBox(height: 25,)
+                Text(
+                  "$index. $score out of 6",
+                  style: const TextStyle(color: Colors.white),
+                ),
+                const SizedBox(
+                  height: 25,
+                )
               ],
             );
           }).toList(),

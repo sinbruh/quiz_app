@@ -4,7 +4,8 @@ import 'package:quiz_app/questions_summary.dart';
 import 'package:quiz_app/score_methods.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen(this.chosenAnswers, this.restartQuiz, this.showScoreboard, {super.key});
+  const ResultsScreen(this.chosenAnswers, this.restartQuiz, this.showScoreboard,
+      {super.key});
 
   final List<String> chosenAnswers;
   final void Function() restartQuiz;
@@ -12,8 +13,8 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, Object>> summaryData = ScoreMethods(chosenAnswers).summaryData;
-
+    final List<Map<String, Object>> summaryData =
+        ScoreMethods(chosenAnswers).summaryData;
 
     final numTotalQuestions = questions.length;
     final numCorrectQuestions = summaryData
@@ -58,7 +59,6 @@ class ResultsScreen extends StatelessWidget {
                     "Scoreboard",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ))
-
             ],
           ),
         ));

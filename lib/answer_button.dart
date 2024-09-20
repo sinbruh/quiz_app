@@ -7,7 +7,6 @@ class AnswerButton extends StatelessWidget {
   final String answerText;
   final void Function() onTap;
 
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -18,6 +17,9 @@ class AnswerButton extends StatelessWidget {
             foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10))),
-        child: Text(answerText, textAlign: TextAlign.center,));
+        child: Text(
+          answerText,
+          textAlign: TextAlign.center,
+        ));
   }
 }

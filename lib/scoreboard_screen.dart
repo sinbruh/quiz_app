@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/scoreboard.dart';
 
 class ScoreboardScreen extends StatefulWidget {
-  ScoreboardScreen(this.scores, this.restartQuiz, {super.key});
+  const ScoreboardScreen(this.scores, this.restartQuiz, {super.key});
 
-  List<int> scores;
+  final List<int> scores;
   final void Function() restartQuiz;
 
   @override
@@ -38,12 +38,16 @@ class _ScoreboardState extends State<ScoreboardScreen> {
               const SizedBox(
                 height: 30,
               ),
-              TextButton.icon(icon: const Icon(Icons.restart_alt),
+              TextButton.icon(
+                  icon: const Icon(Icons.restart_alt),
                   style: TextButton.styleFrom(foregroundColor: Colors.white),
-                  onPressed: widget.restartQuiz, label: const Text("Restart Quiz!", style: TextStyle(fontWeight: FontWeight.bold),))
+                  onPressed: widget.restartQuiz,
+                  label: const Text(
+                    "Restart Quiz!",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ))
             ],
           ),
         ));
-
   }
 }
