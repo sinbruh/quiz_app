@@ -1,0 +1,117 @@
+@startuml
+set namespaceSeparator ::
+
+class "quiz_app::answer_button.dart::AnswerButton" {
+  +String answerText
+  +void Function() onTap
+  +Widget build()
+}
+
+"quiz_app::answer_button.dart::AnswerButton" o-- "null::void Function()"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "quiz_app::answer_button.dart::AnswerButton"
+
+class "quiz_app::models::quiz_questions.dart::QuizQuestion" {
+  +String text
+  +List<String> answers
+  +List<String> shuffledAnswers
+}
+
+class "quiz_app::questions_screen.dart::QuestionsScreen" {
+  +void Function(String) onSelectAnswer
+  +State<QuestionsScreen> createState()
+}
+
+"quiz_app::questions_screen.dart::QuestionsScreen" o-- "null::void Function(String)"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "quiz_app::questions_screen.dart::QuestionsScreen"
+
+class "quiz_app::questions_screen.dart::_QuestionsScreenState" {
+  +int currentQuestionIndex
+  +void answerQuestion()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "quiz_app::questions_screen.dart::_QuestionsScreenState"
+
+class "quiz_app::questions_summary.dart::QuestionsSummary" {
+  +List<Map<String, Object>> summaryData
+  +Color getAnswerColor()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "quiz_app::questions_summary.dart::QuestionsSummary"
+
+class "quiz_app::quiz.dart::Quiz" {
+  +State<Quiz> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "quiz_app::quiz.dart::Quiz"
+
+class "quiz_app::quiz.dart::_QuizState" {
+  -List<String> _selectedAnswers
+  +List<int> scores
+  +String activeScreen
+  +void switchScreen()
+  +void showScoreboard()
+  +void restartQuiz()
+  +void chooseAnswer()
+  +void calculateScore()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "quiz_app::quiz.dart::_QuizState"
+
+class "quiz_app::results_screen.dart::ResultsScreen" {
+  +List<String> chosenAnswers
+  +void Function() restartQuiz
+  +void Function() showScoreboard
+  +Widget build()
+}
+
+"quiz_app::results_screen.dart::ResultsScreen" o-- "null::void Function()"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "quiz_app::results_screen.dart::ResultsScreen"
+
+class "quiz_app::scoreboard.dart::Scoreboard" {
+  +List<int> scores
+  +State<Scoreboard> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "quiz_app::scoreboard.dart::Scoreboard"
+
+class "quiz_app::scoreboard.dart::_ScoreboardState" {
+  +int index
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "quiz_app::scoreboard.dart::_ScoreboardState"
+
+class "quiz_app::scoreboard_screen.dart::ScoreboardScreen" {
+  +List<int> scores
+  +void Function() restartQuiz
+  +State<StatefulWidget> createState()
+}
+
+"quiz_app::scoreboard_screen.dart::ScoreboardScreen" o-- "null::void Function()"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "quiz_app::scoreboard_screen.dart::ScoreboardScreen"
+
+class "quiz_app::scoreboard_screen.dart::_ScoreboardState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "quiz_app::scoreboard_screen.dart::_ScoreboardState"
+
+class "quiz_app::score_methods.dart::ScoreMethods" {
+  +List<String> chosenAnswers
+  +List<Map<String, Object>> summaryData
+}
+
+class "quiz_app::start_screen.dart::StartScreen" {
+  +void Function() startQuiz
+  +void Function() showScoreboard
+  +Widget build()
+}
+
+"quiz_app::start_screen.dart::StartScreen" o-- "null::void Function()"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "quiz_app::start_screen.dart::StartScreen"
+
+
+@enduml

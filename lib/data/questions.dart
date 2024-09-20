@@ -1,5 +1,7 @@
 import 'package:quiz_app/models/quiz_questions.dart';
 
+/// List of questions for the quiz. Each question has a text and a list of
+/// answers. The first answer is the correct one.
 const questions = [
   QuizQuestion(
     'What are the main building blocks of Flutter UIs?',

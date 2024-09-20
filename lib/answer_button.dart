@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 class AnswerButton extends StatelessWidget {
   const AnswerButton(this.answerText, this.onTap, {super.key});
 
+  /// The text to display on the button.
   final String answerText;
+  /// The function to call when the button is tapped.
   final void Function() onTap;
 
+  /// Builds an [ElevatedButton] with the given [answerText] and [onTap] function.
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

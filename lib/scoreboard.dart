@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+/// A widget that displays the scores in a list. The scores are displayed as
+/// a list of numbers, each number represents the score of a user.
+/// The scores are displayed in descending order.
 class Scoreboard extends StatefulWidget {
   const Scoreboard(this.scores, {super.key});
 
+  /// The list of scores.
   final List<int> scores;
 
   @override
@@ -10,6 +14,7 @@ class Scoreboard extends StatefulWidget {
 }
 
 class _ScoreboardState extends State<Scoreboard> {
+  /// The index of the score. Used to display the rank of the user.
   int index = 0;
 
   @override

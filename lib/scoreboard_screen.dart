@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/scoreboard.dart';
 
+/// The scoreboard screen widget. This widget displays the scores of the quiz.
+/// The scores are displayed in descending order. The user can restart the quiz.
 class ScoreboardScreen extends StatefulWidget {
   const ScoreboardScreen(this.scores, this.restartQuiz, {super.key});
 
+  /// The list of scores.
   final List<int> scores;
+  /// Callback function to restart the quiz.
   final void Function() restartQuiz;
 
   @override

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+/// The start screen of the quiz. Displays the quiz logo and the start button.
+/// The user can start the quiz by pressing the start button.
+/// The user can also view the scoreboard by pressing the scoreboard button.
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, this.showScoreboard, {super.key});
 
+  /// Callback function to be called when the start button is pressed.
   final void Function() startQuiz;
+  /// Callback function to be called when the scoreboard button is pressed.
   final void Function() showScoreboard;
 
   @override
