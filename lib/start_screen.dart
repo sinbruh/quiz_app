@@ -19,7 +19,7 @@ class StartScreen extends StatelessWidget {
             height: 80,
           ),
           const Text(
-            'sigma quiz',
+            'Flutter Quiz',
             style: TextStyle(
               color: Colors.white,
             ),
